@@ -1,26 +1,21 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/index.js",
-        "use": "@vercel/node"
-      }
-    ],
-
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.js"
-      }
-    ],
-
-    "env": {
-      "DATABASE_URL": "file:./dev.db"
-    },
-
-    "scripts": {
-      "postinstall": "prisma migrate deploy"
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@vercel/node"
     }
+  ],
 
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+
+  "env": {
+    "DATABASE_URL": "file:./dev.db"
   }
+}
   
