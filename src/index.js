@@ -43,7 +43,7 @@ const userRouter = new UserRouter();
 const videoRouter = new VideosRouter();
 const authRouter = new AuthRouter();
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+// app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 // app.use(authMiddlware)
@@ -60,8 +60,9 @@ app.use('/auth',authRouter.getRouter());
 
 
 app.get('/', (req, res) => {
+    app.use('', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
     // console.log();
-    res.send('Hello World!');
+    // res.send('Hello World!');
 });
 
 
