@@ -7,7 +7,10 @@ import { swaggerUi, swaggerDocs } from "./swagger.js"; // Importation corrigée
 import dotenv from 'dotenv';
 // import authMiddlware from "./middleware/authMiddleware.js"
 
-dotenv.config();
+// dotenv.config();
+
+dotenv.config({ path: './src/.env' });
+
 
 // const JWT_SECRET = process.env.JWT_SECRET || 'secret_key';
 
@@ -58,12 +61,15 @@ app.use('/auth',authRouter.getRouter());
 
 
 
+app.get('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.get('/', (req, res) => {
-    app.use('', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+
+// app.get('/', (req, res) => {
+    // app.use('', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
     // console.log();
     // res.send('Hello World!');
-});
+// });
 
 
 

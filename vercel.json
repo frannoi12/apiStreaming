@@ -16,6 +16,11 @@
 
     "env": {
       "DATABASE_URL": "file:./dev.db"
+    },
+
+    "scripts": {
+      "postinstall": "prisma migrate deploy"
     }
+
   }
   
